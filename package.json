@@ -1,0 +1,53 @@
+{
+    "name": "node-restify-typescript-template",
+    "version": "0.0.1",
+    "main": "build/server.js",
+    "scripts": {
+        "start": "node .",
+        "dev": "nodemon src/server.ts",
+        "clean": "rimraf build",
+        "build": "tsc",
+        "lint": "eslint src/*.ts",
+        "lint:fix": "eslint src/*.ts --fix",
+        "test": "echo \"No test to run\" && exit 0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ejekanshjain/node-restify-typescript-template.git"
+    },
+    "author": "Ekansh Jain",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/ejekanshjain/node-restify-typescript-template/issues"
+    },
+    "homepage": "https://github.com/ejekanshjain/node-restify-typescript-template#readme",
+    "devDependencies": {
+        "@types/restify": "^8.4.2",
+        "@types/restify-errors": "^4.3.3",
+        "@typescript-eslint/eslint-plugin": "^4.1.1",
+        "@typescript-eslint/parser": "^4.1.1",
+        "eslint": "^7.9.0",
+        "eslint-config-standard": "^14.1.1",
+        "eslint-plugin-import": "^2.22.0",
+        "eslint-plugin-node": "^11.1.0",
+        "eslint-plugin-promise": "^4.2.1",
+        "eslint-plugin-standard": "^4.0.1",
+        "husky": "^4.3.0",
+        "nodemon": "^2.0.4",
+        "rimraf": "^3.0.2",
+        "ts-node": "^9.0.0",
+        "typescript": "^4.0.2"
+    },
+    "dependencies": {
+        "dotenv": "^8.2.0",
+        "restify": "^8.5.1",
+        "restify-cors-middleware2": "^2.1.0",
+        "restify-errors": "^8.0.2"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "npm run lint",
+            "pre-push": "npm run test"
+        }
+    }
+}
