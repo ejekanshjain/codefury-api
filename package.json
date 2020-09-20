@@ -1,5 +1,5 @@
 {
-    "name": "node-restify-typescript-template",
+    "name": "codefury-api",
     "version": "0.0.1",
     "main": "build/server.js",
     "scripts": {
@@ -13,14 +13,14 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/ejekanshjain/node-restify-typescript-template.git"
+        "url": "git+https://github.com/ejekanshjain/codefury-api.git"
     },
     "author": "Ekansh Jain",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/ejekanshjain/node-restify-typescript-template/issues"
+        "url": "https://github.com/ejekanshjain/codefury-api/issues"
     },
-    "homepage": "https://github.com/ejekanshjain/node-restify-typescript-template#readme",
+    "homepage": "https://github.com/ejekanshjain/codefury-api#readme",
     "devDependencies": {
         "@types/mongoose": "^5.7.36",
         "@types/restify": "^8.4.2",

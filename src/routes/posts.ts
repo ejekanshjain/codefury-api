@@ -19,7 +19,14 @@ export default (server: Server) => {
                                 $search: {
                                     text: {
                                         query: req.query.search,
-                                        path: ['title', 'tags', 'summary']
+                                        path: [
+                                            { value: 'title', multi: 'keywordAnalyzer' },
+                                            { value: 'tags', multi: 'keywordAnalyzer' },
+                                            { value: 'summary', multi: 'keywordAnalyzer' },
+                                            'title',
+                                            'tags',
+                                            'summary'
+                                        ]
                                     }
                                 }
                             },

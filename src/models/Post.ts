@@ -29,3 +29,43 @@ const PostSchema = new mongoose.Schema({
 })
 
 export default mongoose.model('Post', PostSchema)
+/*
+Search Indexes
+{
+    "mappings": {
+        "dynamic": false,
+        "fields": {
+            "title": {
+                "type": "string",
+                "analyzer": "lucene.standard",
+                "multi": {
+                    "keywordAnalyzer": {
+                        "type": "string",
+                        "analyzer": "lucene.keyword"
+                    }
+                }
+            },
+            "tags": {
+                "type": "string",
+                "analyzer": "lucene.standard",
+                "multi": {
+                    "keywordAnalyzer": {
+                        "type": "string",
+                        "analyzer": "lucene.keyword"
+                    }
+                }
+            },
+            "summary": {
+                "type": "string",
+                "analyzer": "lucene.standard",
+                "multi": {
+                    "keywordAnalyzer": {
+                        "type": "string",
+                        "analyzer": "lucene.keyword"
+                    }
+                }
+            }
+        }
+    }
+}
+*/
