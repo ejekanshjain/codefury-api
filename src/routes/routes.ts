@@ -1,8 +1,7 @@
 import { Server } from 'restify'
 
+import postsRoute from './posts'
+
 export default (server:Server) => {
-    server.get('/', (req, res, next) => {
-        res.send('Hello, World!')
-        next()
-    })
+    postsRoute(server)
 }

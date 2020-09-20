@@ -3,9 +3,10 @@ import corsMiddleware from 'restify-cors-middleware2'
 
 import { NODE_ENV, PORT } from './config'
 import routes from './routes/routes'
+import './db/MongoDB'
 
 const server = restify.createServer({
-    name: 'server',
+    name: 'codefury-api',
     version: '0.0.1'
 })
 
