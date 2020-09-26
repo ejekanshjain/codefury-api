@@ -32,12 +32,21 @@ export default (server: Server) => {
                             },
                             {
                                 $limit: 20
+                            },
+                            {
+                                $project: {
+                                    id: 1,
+                                    title: 1,
+                                    summary: 1,
+                                    tags: 1,
+                                    createdAt: 1
+                                }
                             }
                         ])
                     }
                 })
             } else {
-                res.send({ data: { posts: await Post.find().sort({ createdAt: -1 }).skip((page - 1) * limit).limit(limit) } })
+                res.send({ data: { posts: await Post.find({}, { id: 1, title: 1, summary: 1, tags: 1, createdAt: 1 }).sort({ createdAt: -1 }).skip((page - 1) * limit).limit(limit) } })
             }
             next()
         } catch (err) {
@@ -61,6 +70,7 @@ export default (server: Server) => {
     server.post('/posts', async (req, res, next) => {
         try {
             const { title, summary, content, tags } = req.body
+            // TODO creator id by jwt and also cover image
             const creator = '5f67252e0a6eff373d69570b'
             await Post.create({
                 id: title.toLowerCase().split(' ').join('-'),
